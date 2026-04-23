@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Modisch</title>
+  <link rel="stylesheet" href="admin-dashboard.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0" rel="stylesheet">
+</head>
+<body>
+  <div class="admin-app">
+    <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-label="Open menu">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+    <div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <span class="sidebar-mark">M</span>
+        <div>
+          <div class="sidebar-title">Modisch</div>
+          <div class="sidebar-sub">Commerce</div>
+        </div>
+      </div>
+      <nav class="sidebar-nav" aria-label="Main">
+        <a href="#overview" class="nav-item active" data-nav>
+          <span class="material-symbols-outlined" aria-hidden="true">dashboard</span>
+          Overview
+        </a>
+        <a href="#catalog" class="nav-item" data-nav>
+          <span class="material-symbols-outlined" aria-hidden="true">inventory_2</span>
+          Catalog
+        </a>
+        <a href="#orders" class="nav-item" data-nav>
+          <span class="material-symbols-outlined" aria-hidden="true">receipt_long</span>
+          Orders
+        </a>
+        <a href="#team" class="nav-item" data-nav>
+          <span class="material-symbols-outlined" aria-hidden="true">group</span>
+          Team
+        </a>
+      </nav>
+      <div class="sidebar-foot">
+        <a href="Home.html" class="sidebar-cta">
+          <span class="material-symbols-outlined" aria-hidden="true">storefront</span>
+          View store
+        </a>
+      </div>
+    </aside>
+
+    <div class="admin-main">
+      <header class="page-header">
+        <div>
+          <h1 class="page-title" id="pageTitle">Dashboard</h1>
+          <p class="page-meta"><span id="greeting">Welcome back</span> · <time id="todayDate" datetime=""></time></p>
+        </div>
+        <div class="page-header-actions">
+          <a href="#catalog" class="btn primary btn-header">Add product</a>
+        </div>
+      </header>
+
+      <div class="content-scroll">
+        <section id="overview" class="section-block">
+          <h2 class="visually-hidden">Overview</h2>
+          <div class="stats-grid" id="statsGrid">
+            <article class="stat-card">
+              <div class="stat-icon"><span class="material-symbols-outlined">checkroom</span></div>
+              <div>
+                <div class="stat-label">Products in catalog</div>
+                <div class="stat-value" id="statProducts">0</div>
+              </div>
+            </article>
+            <article class="stat-card stat-card-warn">
+              <div class="stat-icon"><span class="material-symbols-outlined">warning</span></div>
+              <div>
+                <div class="stat-label">Low stock (&lt; 5)</div>
+                <div class="stat-value" id="statLowStock">0</div>
+              </div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon"><span class="material-symbols-outlined">person</span></div>
+              <div>
+                <div class="stat-label">Team &amp; customers</div>
+                <div class="stat-value" id="statUsers">0</div>
+              </div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon"><span class="material-symbols-outlined">payments</span></div>
+              <div>
+                <div class="stat-label">Inventory value</div>
+                <div class="stat-value" id="statInventoryValue">$0</div>
+              </div>
+            </article>
+          </div>
+
+          <div class="overview-split">
+            <div class="panel panel-compact">
+              <h3 class="panel-title">Quick actions</h3>
+              <ul class="quick-list">
+                <li><button type="button" class="quick-item" id="goCatalog">Open catalog &amp; add SKU</button></li>
+                <li><button type="button" class="quick-item" id="goTeam">Invite or edit team members</button></li>
+                <li><button type="button" class="quick-item" id="exportCatalog">Export catalog (Excel)</button></li>
+              </ul>
+            </div>
+            <div class="panel panel-compact">
+              <h3 class="panel-title">Recent activity</h3>
+              <ul class="activity-list" id="activityList"></ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="catalog" class="section-block">
+          <div class="section-head">
+            <h2>Product catalog</h2>
+            <p>SKUs, pricing, stock, and product imagery. Images are stored in your browser for this demo.</p>
+          </div>
+
+          <div class="panel">
+            <div class="form-two-col">
+              <form id="productForm" class="form-grid form-product" novalidate>
+                <input type="hidden" id="productId">
+                <input type="hidden" id="productImageData">
+
+                <div class="field field-image">
+                  <span class="label">Product image</span>
+                  <div class="image-upload">
+                    <div class="image-preview-wrap" id="imagePreviewWrap">
+                      <img id="imagePreview" class="image-preview" alt="" hidden>
+                      <div id="imagePlaceholder" class="image-placeholder">
+                        <span class="material-symbols-outlined">add_photo_alternate</span>
+                        <span>Upload a photo</span>
+                      </div>
+                    </div>
+                    <div class="image-upload-actions">
+                      <label class="btn secondary file-label">
+                        Choose file
+                        <input type="file" id="productImage" accept="image/jpeg,image/png,image/webp,image/gif" class="file-input">
+                      </label>
+                      <button type="button" class="btn ghost btn-sm" id="clearImage">Remove</button>
+                    </div>
+                    <p class="hint">JPEG, PNG, WebP, or GIF. Max 1.5 MB.</p>
+                    <small id="productImageError" class="error"></small>
+                  </div>
+                </div>
+
+                <div class="form-fields-rest">
+                  <div class="field">
+                    <label for="productName">Product name</label>
+                    <input id="productName" type="text" placeholder="Oversized linen shirt" autocomplete="off">
+                    <small id="productNameError" class="error"></small>
+                  </div>
+
+                  <div class="field">
+                    <label for="productCategory">Category</label>
+                    <select id="productCategory">
+                      <option value="">Select category</option>
+                      <option>Men</option>
+                      <option>Women</option>
+                      <option>Kids</option>
+                      <option>Accessories</option>
+                    </select>
+                    <small id="productCategoryError" class="error"></small>
+                  </div>
+
+                  <div class="form-row-2">
+                    <div class="field">
+                      <label for="productPrice">Price (USD)</label>
+                      <input id="productPrice" type="number" min="0.01" step="0.01" placeholder="49.99">
+                      <small id="productPriceError" class="error"></small>
+                    </div>
+                    <div class="field">
+                      <label for="productStock">Stock</label>
+                      <input id="productStock" type="number" min="0" step="1" placeholder="120">
+                      <small id="productStockError" class="error"></small>
+                    </div>
+                  </div>
+
+                  <div class="actions">
+                    <button id="productSubmit" type="submit" class="btn primary">Add product</button>
+                    <button id="productCancel" type="button" class="btn ghost hidden">Cancel edit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <h3 class="table-heading">All products</h3>
+            <div class="table-wrap" role="region" aria-label="Products table" tabindex="0">
+              <table class="data-table products-table">
+                <thead>
+                  <tr>
+                    <th class="th-thumb">Image</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="productsTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section id="orders" class="section-block">
+          <div class="section-head">
+            <h2>Orders</h2>
+            <p>When you connect a checkout, orders will appear here. For now this is a placeholder.</p>
+          </div>
+          <div class="panel order-placeholder">
+            <span class="material-symbols-outlined order-placeholder-icon">local_shipping</span>
+            <h3 class="order-placeholder-title">No live orders in this build</h3>
+            <p>Wire your payment and order API to populate this view. You can still manage inventory and team from the sections above.</p>
+          </div>
+        </section>
+
+        <section id="team" class="section-block">
+          <div class="section-head">
+            <h2>Team &amp; access</h2>
+            <p>Staff and customer records for your commerce workspace.</p>
+          </div>
+
+          <div class="panel">
+            <form id="userForm" class="form-grid form-user-inline" novalidate>
+              <input type="hidden" id="userId">
+
+              <div class="field">
+                <label for="userName">Full name</label>
+                <input id="userName" type="text" placeholder="Ariana Blake" autocomplete="name">
+                <small id="userNameError" class="error"></small>
+              </div>
+
+              <div class="field">
+                <label for="userEmail">Email</label>
+                <input id="userEmail" type="email" placeholder="ariana@modisch.com" autocomplete="email">
+                <small id="userEmailError" class="error"></small>
+              </div>
+
+              <div class="field">
+                <label for="userRole">Role</label>
+                <select id="userRole">
+                  <option value="">Select role</option>
+                  <option>Admin</option>
+                  <option>Staff</option>
+                  <option>Customer</option>
+                </select>
+                <small id="userRoleError" class="error"></small>
+              </div>
+
+              <div class="actions form-user-actions">
+                <button id="userSubmit" type="submit" class="btn primary">Add user</button>
+                <button id="userCancel" type="button" class="btn ghost hidden">Cancel edit</button>
+              </div>
+            </form>
+
+            <h3 class="table-heading">Directory</h3>
+            <div class="table-wrap" role="region" aria-label="Users table" tabindex="0">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="usersTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="admin-dashboard.js"></script>
+</body>
+</html>
