@@ -6,88 +6,112 @@
 <title>Modisch</title>
 <link rel="stylesheet" href="Home.css">
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter&family=Newsreader:wght@400;600&display=swap" rel="stylesheet">
-
-<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-
-
 </head>
 
 <body>
 
 <!-- NAVBAR -->
 <header>
-<div class="nav">
-
-<div class="nav-links">
-<a href="#">Men</a>
-<a href="#">Women</a>
-<a href="#">Kids</a>
-<a href="admin-dashboard.html">Admin</a>
-</div>
-
-<div class="nav-logo">
-  <a href="Home.html">Modisch</a>
-</div>
-
-<div class="nav-actions">
-
- 
-
-  <!-- Cart -->
-  <a href="cart.html">
-    <span class="material-symbols-outlined">shopping_cart</span>
-  </a>
-
-  <!-- Account -->
-  <a href="login.html">
-    <span class="material-symbols-outlined">account_circle</span>
-  </a>
-
-</div>
+  <nav class="nav">
+    <div class="nav-links">
+      <a href="#">Men</a>
+      <a href="#">Women</a>
+      <a href="#">Kids</a>
+      <a href="admin-dashboard.html">Admin</a>
+    </div>
+    <div class="nav-logo">
+      <a href="Home.html">Modisch</a>
+    </div>
+    <div class="nav-actions">
+      <a href="cart.html" aria-label="Cart">
+        <span class="material-symbols-outlined">shopping_bag</span>
+      </a>
+      <a href="login.html" aria-label="Account">
+        <span class="material-symbols-outlined">account_circle</span>
+      </a>
+    </div>
+  </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-<img src="img/man1.png">
-<div class="overlay"></div>
-
-<div class="hero-content">
-<h1>Spring 2026 Collection </h1>
-
-<a href="#" class="btn">Explore</a>
-</div>
+  <img src="img/kid1.png" alt="Spring 2026 Collection">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Spring / Summer 2026</p>
+    <h1>New Season<br>Arrivals</h1>
+    <a href="#" class="btn">Shop the Collection</a>
+  </div>
 </section>
 
 <!-- CATEGORIES -->
 <section class="section">
-<h2 class="title">Categories</h2>
+  <div class="section-header">
+    <h2 class="title">Shop by Category</h2>
+    <div class="title-line"></div>
+  </div>
 
-<div class="grid">
-<div class="card"><img src="img/Screenshot 2026-04-23 152801.png"><span>Women</span></div>
-<div class="card"><img src="img/man3.png"><span>Men</span></div>
-<div class="card"><img src="img/kid2.png"><span>Kids</span></div>
-</div>
+  <div class="categories-list">
+
+    <div class="category-row">
+      <div class="category-img-wrap">
+        <img src="img/Screenshot 2026-04-23 152801.png" alt="Women">
+        <div class="category-img-overlay"></div>
+      </div>
+      <div class="category-info">
+        <span class="category-label">01</span>
+        <h3>Women</h3>
+        <p>Effortlessly refined pieces for every occasion — from tailored separates to flowing silhouettes.</p>
+        <a href="#" class="category-link">
+          Explore Women <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="category-row reverse">
+      <div class="category-img-wrap">
+        <img src="img/download.jfif" alt="Men">
+        <div class="category-img-overlay"></div>
+      </div>
+      <div class="category-info">
+        <span class="category-label">02</span>
+        <h3>Men</h3>
+        <p>Clean lines, premium fabrics, and a quiet confidence. Wardrobe essentials elevated.</p>
+        <a href="#" class="category-link">
+          Explore Men <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="category-row">
+      <div class="category-img-wrap">
+        <img src="img/kidddd.jfif" alt="Kids">
+        <div class="category-img-overlay"></div>
+      </div>
+      <div class="category-info">
+        <span class="category-label">03</span>
+        <h3>Kids</h3>
+        <p>Playful, durable, and thoughtfully designed for children who are always on the move.</p>
+        <a href="#" class="category-link">
+          Explore Kids <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
 </section>
 
-
-
+<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
-
-    <!-- Brand -->
     <div>
       <div class="footer-brand-name">Modisch</div>
       <p class="footer-tagline">
         Elevating everyday essentials through meticulous design and uncompromising quality.
       </p>
-
-      
     </div>
-
-    <!-- Explore -->
     <div class="footer-col">
       <h4>Explore</h4>
       <ul>
@@ -96,8 +120,6 @@
         <li><a href="#">Campaigns</a></li>
       </ul>
     </div>
-
-    <!-- Customer -->
     <div class="footer-col">
       <h4>Customer Care</h4>
       <ul>
@@ -106,8 +128,6 @@
         <li><a href="#">Returns</a></li>
       </ul>
     </div>
-
-    <!-- Legal -->
     <div class="footer-col">
       <h4>Legal</h4>
       <ul>
@@ -115,23 +135,31 @@
         <li><a href="#">Terms of Service</a></li>
       </ul>
     </div>
-
   </div>
-
   <div class="footer-copy">
-    © 2024 Modisch. All rights reserved.
+    © 2026 Modisch. All rights reserved.
   </div>
 </footer>
 
 </body>
+
 <script>
-const hero = document.querySelector(".hero img");
-
+const heroImg = document.querySelector(".hero img");
 document.addEventListener("mousemove", (e) => {
-  let x = (e.clientX / window.innerWidth - 0.5) * 20;
-  let y = (e.clientY / window.innerHeight - 0.5) * 20;
-
-  hero.style.transform = `scale(1.05) translate(${x}px, ${y}px)`;
+  let x = (e.clientX / window.innerWidth - 0.5) * 15;
+  let y = (e.clientY / window.innerHeight - 0.5) * 15;
+  heroImg.style.transform = `scale(1.06) translate(${x}px, ${y}px)`;
 });
+
+const rows = document.querySelectorAll(".category-row");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add("visible");
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+rows.forEach(r => observer.observe(r));
 </script>
 </html>
