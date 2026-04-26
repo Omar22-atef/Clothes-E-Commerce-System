@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Profile | VogueNest</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">VogueNest</div>
+        <nav class="nav">
+          <a href="./profile.html" class="active">Profile</a>
+          <a href="./orders.html">Orders</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="container grid profile-layout">
+        <aside class="card profile-card">
+          <div class="profile-head">
+            <img
+              class="avatar"
+              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80"
+              alt="Customer profile"
+            />
+            <h2 id="fullName">Sophia Martinez</h2>
+            <p class="muted">Premium Customer</p>
+            <button class="btn btn-primary" id="editProfileBtn">Edit Profile</button>
+          </div>
+          <div class="profile-info">
+            <div class="info-item"><strong>Email:</strong> <span id="email">sophia@email.com</span></div>
+            <div class="info-item"><strong>Phone:</strong> <span id="phone">+1 (555) 104-2208</span></div>
+            <div class="info-item"><strong>Address:</strong> <span id="address">221 Market St, San Francisco</span></div>
+          </div>
+        </aside>
+
+        <section class="grid">
+          <article class="card section">
+            <h3>Saved Addresses</h3>
+            <ul class="list" id="savedAddresses"></ul>
+          </article>
+
+          <article class="card section">
+            <h3>Payment Methods</h3>
+            <ul class="list" id="paymentMethods"></ul>
+          </article>
+
+          <article class="card section">
+            <h3>Wishlist</h3>
+            <div class="wishlist-grid" id="wishlist"></div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

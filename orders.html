@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orders | VogueNest</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">VogueNest</div>
+        <nav class="nav">
+          <a href="./profile.html">Profile</a>
+          <a href="./orders.html" class="active">Orders</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="container">
+        <div class="orders-head">
+          <div>
+            <h1 style="margin: 0">My Orders</h1>
+            <p class="muted" style="margin: 6px 0 0">Track all your recent and past purchases</p>
+          </div>
+          <button class="btn btn-outline" id="refreshOrders">Refresh Orders</button>
+        </div>
+
+        <section class="orders-list" id="ordersList"></section>
+      </div>
+    </main>
+
+    <div class="modal" id="orderModal" aria-hidden="true">
+      <div class="modal-content">
+        <h3 id="modalOrderId">Order Details</h3>
+        <p id="modalMeta" class="muted"></p>
+        <div id="modalProducts"></div>
+        <div style="margin-top: 14px">
+          <button class="btn btn-primary" id="closeModal">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
