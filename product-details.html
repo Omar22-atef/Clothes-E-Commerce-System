@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details | Modisch</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">Modisch</div>
+        <nav class="nav">
+          <a href="./Home.html">Home</a>
+          <a href="./category-men.html">Men</a>
+          <a href="./category-women.html">Women</a>
+          <a href="./category-kids.html">Kids</a>
+          <a href="./cart.html">Cart</a>
+          <a href="./orders.html">Orders</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page" id="productDetailsPage">
+      <div class="container details-layout">
+        <section class="card details-gallery">
+          <img id="mainProductImage" class="main-product-image" src="" alt="Product image" />
+          <div class="thumb-grid" id="productThumbGrid"></div>
+        </section>
+
+        <section class="card details-info">
+          <p class="muted">Modisch Essentials</p>
+          <h1 id="productName"></h1>
+          <p class="details-price" id="productPrice"></p>
+          <p class="muted details-description" id="productDescription"></p>
+
+          <div class="variant-group">
+            <h3>Select Size</h3>
+            <div class="option-row" id="sizeOptions"></div>
+          </div>
+
+          <div class="variant-group">
+            <h3>Select Color</h3>
+            <div class="option-row" id="colorOptions"></div>
+          </div>
+
+          <button class="btn btn-primary details-add-btn" id="addToCartBtn">Add to Cart</button>
+          <p id="addMessage" class="add-message"></p>
+        </section>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

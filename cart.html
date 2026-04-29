@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart | Modisch</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">Modisch</div>
+        <nav class="nav">
+          <a href="./Home.html">Home</a>
+          <a href="./category-men.html">Men</a>
+          <a href="./category-women.html">Women</a>
+          <a href="./category-kids.html">Kids</a>
+          <a href="./cart.html" class="active">Cart</a>
+          <a href="./orders.html">Orders</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page" id="cartPage">
+      <div class="container">
+        <div class="orders-head">
+          <div>
+            <h1 style="margin: 0">Shopping Cart</h1>
+            <p class="muted" style="margin: 6px 0 0">Items in your cart: <span id="cartCount">0</span></p>
+          </div>
+          <button class="btn btn-outline" id="clearCartBtn" type="button">Clear Cart</button>
+        </div>
+
+        <div class="cart-layout">
+          <section class="cart-list" id="cartList"></section>
+
+          <aside class="card cart-summary">
+            <h3>Order Summary</h3>
+            <div class="cart-summary-row">
+              <span>Subtotal</span>
+              <strong id="cartSubtotal">$0</strong>
+            </div>
+            <div class="cart-summary-row">
+              <span>Shipping</span>
+              <strong id="cartShipping">$0</strong>
+            </div>
+            <div class="cart-summary-row total">
+              <span>Total</span>
+              <strong id="cartTotal">$0</strong>
+            </div>
+            <button class="btn btn-primary cart-checkout-btn" id="checkoutBtn" type="button">Checkout</button>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
