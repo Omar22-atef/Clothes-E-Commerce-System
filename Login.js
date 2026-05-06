@@ -1,34 +1,40 @@
+const form = document.getElementById("loginForm");
 
-    const form = document.getElementById("loginForm");
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
+  let email = document.getElementById("email").value.trim();
+  let password = document.getElementById("password").value.trim();
 
-      let email = document.getElementById("email").value;
-      let password = document.getElementById("password").value;
+  let emailError = document.getElementById("emailError");
+  let passwordError = document.getElementById("passwordError");
 
-      let emailError = document.getElementById("emailError");
-      let passwordError = document.getElementById("passwordError");
+  // Reset errors
+  emailError.textContent = "";
+  passwordError.textContent = "";
 
-      // Reset errors
-      emailError.textContent = "";
-      passwordError.textContent = "";
+  let valid = true;
 
-      let valid = true;
+  // Email validation
+  if (email === "") {
+    emailError.textContent = "Email is required";
+    valid = false;
+  } else if (!email.includes("@")) {
+    emailError.textContent = "Enter a valid email";
+    valid = false;
+  }
 
-      // Email validation
-      if (email === "") {
-        emailError.textContent = "Email is required";
-        valid = false;
-      }
+  // Password validation
+  if (password === "") {
+    passwordError.textContent = "Password is required";
+    valid = false;
+  } else if (password.length < 6) {
+    passwordError.textContent = "Password must be at least 6 characters";
+    valid = false;
+  }
 
-      // Password validation
-      if (password.length < 6) {
-        passwordError.textContent = "Password must be at least 6 characters";
-        valid = false;
-      }
-
-      if (valid) {
-        alert("Login successful ✅");
-      }
-    });
+  // Redirect to Home page
+  if (valid) {
+    window.location.href = "Home.html";
+  }
+});
