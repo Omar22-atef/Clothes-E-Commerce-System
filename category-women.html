@@ -5,19 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Women Category | VogueNest</title>
     <link rel="stylesheet" href="./styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
   </head>
   <body data-category="women">
-    <header class="topbar">
-      <div class="container topbar-inner">
-        <div class="brand">VogueNest</div>
-        <nav class="nav">
-          <a href="./profile.html">Profile</a>
-          <a href="./orders.html">Orders</a>
-          <a href="./category-men.html">Men</a>
-          <a href="./category-women.html" class="active">Women</a>
-          <a href="./category-kids.html">Kids</a>
-        </nav>
-      </div>
+    <header>
+      <nav class="nav">
+        <div class="nav-links">
+          <a href="category-men.html">Men</a>
+          <a href="category-women.html">Women</a>
+          <a href="category-kids.html">Kids</a>
+          <a href="admin-dashboard.html">Admin</a>
+        </div>
+        <div class="nav-logo">
+          <a href="Home.html">Modisch</a>
+        </div>
+        <div class="nav-actions">
+          <a href="cart.html" aria-label="Cart">
+            <span class="material-symbols-outlined">shopping_bag</span>
+          </a>
+          <a href="Login.html" aria-label="Account">
+            <span class="material-symbols-outlined">account_circle</span>
+          </a>
+        </div>
+      </nav>
     </header>
 
     <main class="page">
@@ -29,6 +40,43 @@
         <section class="category-grid" id="categoryGrid"></section>
       </div>
     </main>
+
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-name">Modisch</div>
+          <p class="footer-tagline">
+            Elevating everyday essentials through meticulous design and uncompromising quality.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Campaigns</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Returns</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-copy">
+        © 2026 Modisch. All rights reserved.
+      </div>
+    </footer>
 
     <script src="./script.js"></script>
   </body>

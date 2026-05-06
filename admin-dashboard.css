@@ -1,20 +1,20 @@
 :root {
-  --bg: #f2ebe3;
-  --panel: #fffcf8;
-  --border: #e4d9cc;
-  --text: #1f1a16;
-  --muted: #6b5f55;
-  --accent: #5c4333;
-  --accent-soft: #ede4db;
-  --accent-strong: #3d2b20;
+  --bg: #f7f5f0;
+  --panel: #ffffff;
+  --border: #e2ddd6;
+  --text: #1a1814;
+  --muted: #9b9690;
+  --accent: #1a1814;
+  --accent-soft: #edeae3;
+  --accent-strong: #4a4740;
   --warn-bg: #fff4e6;
   --warn-border: #e8c48a;
   --danger: #b83232;
   --success: #2d6a4f;
-  --shadow: 0 12px 40px rgba(40, 28, 20, 0.08);
+  --shadow: 0 16px 36px rgba(26, 24, 20, 0.08);
   --sidebar-w: 260px;
   --header-h: 64px;
-  --radius: 14px;
+  --radius: 0;
   --tap: 44px;
 }
 
@@ -31,7 +31,7 @@ html {
 }
 
 body {
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: "DM Sans", system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.5;
@@ -74,11 +74,11 @@ img {
   z-index: 200;
   width: var(--sidebar-w);
   height: 100dvh;
-  background: #2a2220;
-  color: #f2ebe6;
+  background: rgb(4, 29, 22);
+  color: rgba(224, 224, 224, 0.7);
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #3a312e;
+  border-right: none;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -93,10 +93,10 @@ img {
 .sidebar-mark {
   width: 40px;
   height: 40px;
-  border-radius: 10px;
-  background: #c4a57b;
-  color: #1f1a16;
-  font-family: "Newsreader", Georgia, serif;
+  border-radius: 0;
+  background: #ffffff;
+  color: rgb(4, 29, 22);
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 22px;
   font-weight: 600;
   display: flex;
@@ -106,7 +106,7 @@ img {
 }
 
 .sidebar-title {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 1.15rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -153,8 +153,8 @@ img {
 }
 
 .nav-item.active {
-  background: #c4a57b;
-  color: #1a1412;
+  background: #ffffff;
+  color: rgb(4, 29, 22);
 }
 
 .nav-item.active .material-symbols-outlined {
@@ -235,7 +235,7 @@ img {
   z-index: 50;
   min-height: var(--header-h);
   padding: 16px 20px 16px 24px;
-  background: rgba(255, 252, 248, 0.92);
+  background: rgba(247, 245, 240, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
   display: flex;
@@ -246,7 +246,7 @@ img {
 }
 
 .page-title {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: clamp(1.35rem, 3vw, 1.75rem);
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -287,7 +287,7 @@ img {
 }
 
 .section-head h2 {
-  font-family: "Newsreader", Georgia, serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: clamp(1.2rem, 2.4vw, 1.5rem);
   font-weight: 600;
   margin-bottom: 6px;
@@ -558,7 +558,7 @@ img {
 input,
 select {
   min-height: var(--tap);
-  border-radius: 10px;
+  border-radius: 0;
   border: 1px solid #d2c4b4;
   padding: 0 12px;
   font-size: 0.95rem;
@@ -577,7 +577,7 @@ select:focus {
 
 .btn {
   border: none;
-  border-radius: 10px;
+  border-radius: 0;
   padding: 0 16px;
   min-height: var(--tap);
   font-size: 0.9rem;
